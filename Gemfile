@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+gem 'jquery-rails'
+
+gem "less-rails"
+gem "twitter-bootstrap-rails"  	
 
 gem 'json'
 
@@ -16,7 +19,6 @@ gem 'json'
 group :assets do
 	gem 'sass-rails',   '~> 3.2.3'
   	gem 'coffee-rails', '~> 3.2.1'
-  	gem "twitter-bootstrap-rails"
   	gem "therubyracer"
 
 	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -25,7 +27,14 @@ group :assets do
   	gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+	gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
