@@ -1,11 +1,13 @@
 #spec/factories/meals.rb
 
-FactoryGirl.define do 
+FactoryGirl.define do
+
 	factory :meal do
-		description "Description"
+		aperitif "Apéritif"
+		starter "Entrée"
+		course "Plat"
+		dessert "Dessert"
+		notes "Notes"
 	end
 
-	factory :invalid_meal, parent: :meal do |f|
-		f.description nil
-	end
 end

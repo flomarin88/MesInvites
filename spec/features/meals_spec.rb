@@ -7,11 +7,19 @@ describe "Meals" do
 			visit meals_url	
 			expect {
 				click_link 'Ajouter un repas'
-				fill_in 'Description', with: 'Ma description'
+				fill_in 'Apéritif', with: 'Apéro'
+				fill_in 'Entrée', with: 'Tomates'
+				fill_in 'Plat', with: 'Bon plat'
+				fill_in 'Dessert', with: 'Excellent dessert'
+				fill_in 'Notes', with: 'Mes notes'
 				click_button 'Enregistrer'
 			}.to change(Meal, :count).by(1)
 			page.should have_content "Le repas a été créé avec succès."
-			page.should have_content "Description : Ma description"
+			page.should have_content "Apéritif : Apéro"
+			page.should have_content "Entrée : Tomate"
+			page.should have_content "Plat : Bon plat"
+			page.should have_content "Dessert : Excellent dessert"
+			page.should have_content "Notes : Mes notes"
 		end
 	end
 end

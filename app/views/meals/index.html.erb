@@ -6,8 +6,13 @@
   <thead>
     <tr>
       <th>Numéro</th>
-      <th>Description</th>
-      <th>Créé le</th>
+      <th>Date</th>
+      <th>Invités</th>
+      <th>Apéritif</th>
+      <th>Entrée</th>
+      <th>Plat</th>
+      <th>Dessert</th>
+      <th>Notes</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -15,8 +20,13 @@
     <% @meals.each do |meal| %>
       <tr>
         <td><%= link_to meal.id, meal_path(meal) %></td>
-        <td><%= meal.description %></td>
-        <td><%=l meal.created_at %></td>
+        <td></td>
+        <td></td>
+        <td><%= meal.aperitif %></td>
+        <td><%= meal.starter %></td>
+        <td><%= meal.course %></td>
+        <td><%= meal.dessert %></td>
+        <td><%= meal.notes %></td>
         <td>
           <%= link_to "Modifier",
                       edit_meal_path(meal), :class => 'btn btn-mini' %>

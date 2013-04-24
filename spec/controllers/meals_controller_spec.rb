@@ -59,23 +59,11 @@ describe MealsController do
       			response.should redirect_to Meal.last
 			end
 		end
-
-		context "with invalid attributes" do
-			it "does not save the new meal in the database" do
-				expect {
-        			post :create, meal: FactoryGirl.attributes_for(:invalid_meal)
-      			}.to_not change(Meal,:count)
-			end
-			it "re-renders the :new template" do
-				post :create, meal: FactoryGirl.attributes_for(:invalid_meal)
-      			response.should render_template :new
-			end
-		end
 	end
 
 	describe 'PUT update' do
   		before :each do
-    		@meal = FactoryGirl.create(:meal, description: "Description")
+    		@meal = FactoryGirl.create(:meal)
   		end
   
 	  	context "valid attributes" do
@@ -86,34 +74,19 @@ describe MealsController do
 	  
 		    it "changes @meal's attributes" do
 		    	put :update, id: @meal, 
-		        meal: FactoryGirl.attributes_for(:meal, description: "Nouvelle description")
+		        meal: FactoryGirl.attributes_for(:meal, aperitif: "NA", starter: "NE", course: "NP", dessert: "ND", notes: "NN")
 			    @meal.reload
-			    @meal.description.should eq("Nouvelle description")
+			    @meal.aperitif.should eq("NA")
+			    @meal.starter.should eq("NE")
+			    @meal.course.should eq("NP")
+			    @meal.dessert.should eq("ND")
+			    @meal.notes.should eq("NN")
 		    end
 	  
 	    	it "redirects to the updated meal" do
 	      		put :update, id: @meal, meal: FactoryGirl.attributes_for(:meal)
 	      		response.should redirect_to @meal
 	    	end
-	  	end
-	  
-	  	context "invalid attributes" do
-	    	it "locates the requested @meal" do
-		      	put :update, id: @meal, meal: FactoryGirl.attributes_for(:invalid_meal)
-		      	assigns(:meal).should eq(@meal)      
-	    	end
-	    
-		    it "does not change @meal's attributes" do
-		      put :update, id: @meal, 
-		        meal: FactoryGirl.attributes_for(:meal, description: nil)
-		      	@meal.reload
-		      	@meal.description.should eq("Description")
-		    end
-	    
-		    it "re-renders the edit method" do
-		      put :update, id: @meal, meal: FactoryGirl.attributes_for(:invalid_meal)
-		      response.should render_template :edit
-		    end
 	  	end
 	end
 

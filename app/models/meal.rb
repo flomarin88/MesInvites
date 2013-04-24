@@ -1,5 +1,4 @@
 class Meal < ActiveRecord::Base
-  attr_accessible :description
-
-  validates_presence_of :description
+	attr_accessible :meal_date, :aperitif, :starter, :course, :dessert, :notes
+	
 end
