@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'json'
 
 # Gems used only for assets and not required

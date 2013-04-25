@@ -4,6 +4,12 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong>Date :</strong></dt>
+  <% if @meal.meal_date %>
+    <dd><%= l(@meal.meal_date, :format => ("%A %d %B %Y")) %></dd>
+  <% else %>
+    <dd><em>Non précisée</em></dd>
+  <% end %>
   <dt><strong>Apéritif :</strong></dt>
   <dd><%= @meal.aperitif %></dd>
   <dt><strong>Entrée :</strong></dt>
