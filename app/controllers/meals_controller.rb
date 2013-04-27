@@ -41,7 +41,7 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(params[:meal])
-
+    
     respond_to do |format|
       if @meal.save
         format.html { redirect_to @meal, :notice => 'Le repas a été créé avec succès.' }
