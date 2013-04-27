@@ -10,6 +10,12 @@
   <% else %>
     <dd><em>Non précisée</em></dd>
   <% end %>
+  <dt><strong>Invités :</strong></dt>
+  <% if @meal.guest %>
+    <dd><%= @meal.guest.name %></dd>
+  <% else %>
+    <dd><em>Aucun</em></dd>
+  <% end %>
   <dt><strong>Apéritif :</strong></dt>
   <dd><%= @meal.aperitif %></dd>
   <dt><strong>Entrée :</strong></dt>

@@ -1,6 +1,6 @@
 Mesinvites::Application.routes.draw do
   resources :meals
-
+  #resources :guests
 
   get "meals/index"
 

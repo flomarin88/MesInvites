@@ -21,7 +21,7 @@
       <tr>
         <td><%= link_to meal.id, meal_path(meal) %></td>
         <td><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %></td>
-        <td></td>
+        <td><%= meal.guest.name if meal.guest %></td>
         <td><%= meal.aperitif %></td>
         <td><%= meal.starter %></td>
         <td><%= meal.course %></td>

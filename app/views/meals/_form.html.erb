@@ -1,9 +1,16 @@
 <%= form_for @meal, :html => { :class => 'form-horizontal' } do |f| %>
-  
+
   <div class="control-group">
     <%= f.label 'Date du repas', :class => 'control-label', :for => 'meal_date'%>
     <div class="controls">
       <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label 'Invités', :class => 'control-label', :for => 'invites' %>
+    <div class="controls">
+      <%= f.text_field :guest_name, :value => (@meal.guest.name if @meal.guest), :databehaviour => 'invites-autocomplete', :id => 'invites' %>
     </div>
   </div>
   
