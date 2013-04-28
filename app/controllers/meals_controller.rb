@@ -40,7 +40,16 @@ class MealsController < ApplicationController
   # POST /meals
   # POST /meals.json
   def create
+    @guest_name = params[:meal][:guest_name]
+    params[:meal].delete :guest_name
+    @guest = Guest.where(:name => @guest_name).first
+    if (@guest.nil?)
+      @guest = Guest.new
+      @guest.name = @guest_name
+    end
+
     @meal = Meal.new(params[:meal])
+    @meal.guest = @guest
     
     respond_to do |format|
       if @meal.save
@@ -59,6 +68,14 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
 
     respond_to do |format|
+      @guest_name = params[:meal][:guest_name]
+      params[:meal].delete :guest_name
+      @guest = Guest.where(:name => @guest_name).first
+      if (@guest.nil?)
+        @guest = Guest.new
+        @guest.name = @guest_name
+      end
+      @meal.guest = @guest      
       if @meal.update_attributes(params[:meal])
         format.html { redirect_to @meal, :notice => 'Le repas a été mis à jour avec succès.' }
         format.json { head :no_content }
