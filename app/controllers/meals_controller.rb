@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
