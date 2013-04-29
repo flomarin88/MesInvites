@@ -7,6 +7,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'json'
+gem 'rails-i18n'
 
 # Gems used only for assets and not required
 # in production environments by default.
