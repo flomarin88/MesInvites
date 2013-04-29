@@ -16,3 +16,11 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require bootstrap-datepicker
+//= require jquery-tablesorter
+
+$('[databehaviour~=datepicker]').datepicker({
+	format: 'dd/mm/yyyy',
+    autoclose: 1,
+    weekStart: 1,
+    language: 'fr'
+});

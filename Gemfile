@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'json'
 gem 'rails-i18n'
+gem 'jquery-tablesorter'
 
 # Gems used only for assets and not required
 # in production environments by default.

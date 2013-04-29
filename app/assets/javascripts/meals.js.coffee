@@ -1,4 +1,5 @@
 jQuery ->
+    $("#meals_table").tablesorter()
     availableTags = [];
     $.ajax '/guests.json',
         success  : (data, status, xhr) ->
