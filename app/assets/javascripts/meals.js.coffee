@@ -1,5 +1,9 @@
 jQuery ->
     $("#meals_table").tablesorter()
+    
+    $("td[data-link]").click ->
+        window.location = this.dataset.link
+
     availableTags = [];
     $.ajax '/guests.json',
         success  : (data, status, xhr) ->

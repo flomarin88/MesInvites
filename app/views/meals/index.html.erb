@@ -5,28 +5,24 @@
 <table class="table table-striped table-hover" id="meals_table">
   <thead>
     <tr>
-      <th>Numéro</th>
       <th>Date</th>
       <th>Invités</th>
       <th>Apéritif</th>
       <th>Entrée</th>
       <th>Plat</th>
       <th>Dessert</th>
-      <th>Notes</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @meals.each do |meal| %>
       <tr>
-        <td><%= link_to meal.id, meal_path(meal) %></td>
-        <td><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %></td>
-        <td><%= meal.guest.name if meal.guest %></td>
-        <td><%= meal.aperitif %></td>
-        <td><%= meal.starter %></td>
-        <td><%= meal.course %></td>
-        <td><%= meal.dessert %></td>
-        <td><%= meal.notes %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.guest.name if meal.guest %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.aperitif %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.starter %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.course %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.dessert %></td>
         <td>
           <%= link_to "Modifier",
                       edit_meal_path(meal), :class => 'btn btn-mini' %>
