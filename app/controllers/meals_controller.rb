@@ -4,7 +4,7 @@ class MealsController < ApplicationController
   # GET /meals
   # GET /meals.json
   def index
-    @meals = Meal.all
+    @meals = Meal.order("meal_date DESC").all
 
     respond_to do |format|
       format.html # index.html.erb
