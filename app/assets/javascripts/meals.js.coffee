@@ -1,5 +1,8 @@
 jQuery ->
-    $("#meals_table").tablesorter()
+    $("#meals_table").tablesorter({
+        theme : "bootstrap",
+        headerTemplate : '{content} {icon}'
+    })
     
     $("td[data-link]").click ->
         window.location = this.dataset.link
