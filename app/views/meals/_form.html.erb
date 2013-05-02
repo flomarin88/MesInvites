@@ -3,7 +3,11 @@
   <div class="control-group">
     <%= f.label 'Date du repas', :class => 'control-label', :for => 'meal_date'%>
     <div class="controls">
-      <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date' %>
+      <div class="input-append">
+        <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date' %>
+          <button class="btn" type="button">Midi</button>
+          <button class="btn" type="button">Soir</button>
+      </div>
     </div>
   </div>
 
@@ -17,35 +21,35 @@
   <div class="control-group">
     <%= f.label 'Apéritif', :class => 'control-label', :for => 'aperitif'%>
     <div class="controls">
-      <%= f.text_field :aperitif, :class => 'text_field', :id => 'aperitif' %>
+      <%= f.text_field :aperitif, :class => 'text_field', :id => 'aperitif', :class => 'input-xxlarge' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label 'Entrée', :class => 'control-label', :for => 'starter'%>
     <div class="controls">
-      <%= f.text_field :starter, :class => 'text_field', :id => 'starter' %>
+      <%= f.text_field :starter, :class => 'text_field', :id => 'starter', :class => 'input-xxlarge' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label 'Plat', :class => 'control-label', :for => 'course'%>
     <div class="controls">
-      <%= f.text_field :course, :class => 'text_field', :id => 'course' %>
+      <%= f.text_field :course, :class => 'text_field', :id => 'course', :class => 'input-xxlarge' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label 'Dessert', :class => 'control-label', :for => 'dessert'%>
     <div class="controls">
-      <%= f.text_field :dessert, :class => 'text_field', :id => 'dessert' %>
+      <%= f.text_field :dessert, :class => 'text_field', :id => 'dessert', :class => 'input-xxlarge' %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label 'Notes', :class => 'control-label', :for => 'notes' %>
     <div class="controls">
-      <%= f.text_area :notes, :class => 'text_area', :id => 'notes', :rows => '3' %>
+      <%= f.text_area :notes, :class => 'text_area', :id => 'notes', :rows => '5', :class => 'input-xxlarge' %>
     </div>
   </div>
 
