@@ -4,9 +4,11 @@
     <%= f.label 'Date du repas', :class => 'control-label', :for => 'meal_date'%>
     <div class="controls">
       <div class="input-append">
-        <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date' %>
-          <button class="btn" type="button">Midi</button>
-          <button class="btn" type="button">Soir</button>
+        <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date', :class => 'input-small' %>
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn">Déjeuner</button>
+          <button type="button" class="btn">Diner</button>
+        </div>
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ FactoryGirl.define do
 		course "Plat"
 		dessert "Dessert"
 		notes "Notes"
+		diner true
 	end
 
 end
