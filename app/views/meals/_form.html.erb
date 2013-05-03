@@ -5,9 +5,10 @@
     <div class="controls">
       <div class="input-append">
         <%= f.text_field :meal_date, :value => (l(@meal.meal_date, :format => ("%d/%m/%Y")) if @meal.meal_date), :databehaviour => 'datepicker', :id => 'meal_date', :class => 'input-small' %>
+        <%= f.hidden_field :diner, :id => "dinerHiddenValue" %>
         <div class="btn-group" data-toggle="buttons-radio">
-          <button type="button" class="btn">Déjeuner</button>
-          <button type="button" class="btn">Diner</button>
+          <button type="button" id="lunchButton" class="btn <%= 'active' if @meal.diner != nil && !@meal.diner %>" onClick="document.getElementById('dinerHiddenValue').value=0">Déjeuner</button>
+          <button type="button" id="dinerButton" class="btn <%= 'active' if @meal.diner != nil && @meal.diner %>" onClick="document.getElementById('dinerHiddenValue').value=1">Diner</button>
         </div>
       </div>
     </div>

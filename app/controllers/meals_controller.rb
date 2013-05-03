@@ -52,7 +52,7 @@ class MealsController < ApplicationController
 
     @meal = Meal.new(params[:meal])
     @meal.guest = @guest
-    
+
     respond_to do |format|
       if @meal.save
         format.html { redirect_to @meal, :notice => 'Le repas a été créé avec succès.' }

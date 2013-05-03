@@ -74,8 +74,9 @@ describe MealsController do
 	  
 		    it "changes @meal's attributes" do
 		    	put :update, id: @meal, 
-		        meal: FactoryGirl.attributes_for(:meal, aperitif: "NA", starter: "NE", course: "NP", dessert: "ND", notes: "NN")
+		        meal: FactoryGirl.attributes_for(:meal, diner: false, aperitif: "NA", starter: "NE", course: "NP", dessert: "ND", notes: "NN")
 			    @meal.reload
+			    @meal.diner.should eq(false)
 			    @meal.aperitif.should eq("NA")
 			    @meal.starter.should eq("NE")
 			    @meal.course.should eq("NP")
