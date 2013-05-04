@@ -17,7 +17,15 @@
   <tbody>
     <% @meals.each do |meal| %>
       <tr>
-        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %> 
+          <% if meal.diner != nil %>
+            <% if meal.diner %>
+              Diner
+            <% else %>
+              Déjeuner
+            <% end %>
+          <% end %>
+        </td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.guest.name if meal.guest %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.aperitif %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.starter %></td>
