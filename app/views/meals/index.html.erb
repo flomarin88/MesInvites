@@ -31,7 +31,7 @@
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.aperitif %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.starter %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.course %></td>
-        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= "Fromage" if meal.cheese %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= "Fromage" if meal.cheese %><%= " et " if meal.cheese && meal.salad %><%= "Salade" if meal.salad %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.dessert %></td>
         <td>
           <%= link_to "Modifier",

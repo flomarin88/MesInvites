@@ -39,6 +39,13 @@
   <% else %>
     <dd>Non</dd>
   <% end %>
+
+  <dt><strong>Salade :</strong></dt>
+  <% if @meal.salad %>
+    <dd>Oui</dd>
+  <% else %>
+    <dd>Non</dd>
+  <% end %>
   
   <dt><strong>Dessert :</strong></dt>
   <dd><%= @meal.dessert %></dd>
