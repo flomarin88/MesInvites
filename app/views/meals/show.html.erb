@@ -4,6 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
+  
   <dt><strong>Date :</strong></dt>
   <% if @meal.meal_date %>
     <dd>
@@ -19,19 +20,22 @@
   <% else %>
     <dd><em>Non précisée</em></dd>
   <% end %>
+  
   <dt><strong>Invités :</strong></dt>
-  <% if @meal.guest %>
+  <% if @meal.guest && @meal.guest.name? %>
     <dd><%= @meal.guest.name %></dd>
   <% else %>
     <dd><em>Aucun</em></dd>
   <% end %>
+  
   <dt><strong>Apéritif :</strong></dt>
-  <dd><%= @meal.aperitif %></dd>
+  <dd><%= @meal.aperitif %><em><%= "Aucun" if !@meal.aperitif? %></em></dd>
+  
   <dt><strong>Entrée :</strong></dt>
-  <dd><%= @meal.starter %></dd>
+  <dd><%= @meal.starter %><em><%= "Aucune" if !@meal.starter? %></em></dd>
   
   <dt><strong>Plat :</strong></dt>
-  <dd><%= @meal.course %></dd>
+  <dd><%= @meal.course %><em><%= "Aucun" if !@meal.course? %></em></dd>
 
   <dt><strong>Fromage :</strong></dt>
   <% if @meal.cheese %>
@@ -48,9 +52,11 @@
   <% end %>
   
   <dt><strong>Dessert :</strong></dt>
-  <dd><%= @meal.dessert %></dd>
+  <dd><%= @meal.dessert %><em><%= "Aucun" if !@meal.dessert? %></em></dd>
+  
   <dt><strong>Notes :</strong></dt>
   <dd><%= @meal.notes %></dd>
+
 </dl>
 
 <div class="form-actions">
