@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503072645) do
+ActiveRecord::Schema.define(:version => 20130505161809) do
 
   create_table "guests", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130503072645) do
     t.date     "meal_date"
     t.integer  "guest_id"
     t.boolean  "diner"
+    t.boolean  "cheese"
   end
 
 end

@@ -43,6 +43,14 @@
   </div>
 
   <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <%= f.check_box :cheese %>Fromage
+      </label>
+    </div>
+  </div>
+
+  <div class="control-group">
     <%= f.label 'Dessert', :class => 'control-label', :for => 'dessert'%>
     <div class="controls">
       <%= f.text_field :dessert, :class => 'text_field', :id => 'dessert', :class => 'input-xxlarge' %>
