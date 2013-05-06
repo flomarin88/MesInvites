@@ -10,6 +10,7 @@
       <th>Apéritif</th>
       <th>Entrée</th>
       <th>Plat</th>
+      <th>Autre</th>
       <th>Dessert</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -30,6 +31,7 @@
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.aperitif %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.starter %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.course %></td>
+        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= "Fromage" if meal.cheese %></td>
         <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.dessert %></td>
         <td>
           <%= link_to "Modifier",

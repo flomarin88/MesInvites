@@ -34,7 +34,11 @@
   <dd><%= @meal.course %></dd>
 
   <dt><strong>Fromage :</strong></dt>
-  <dd><%= @meal.cheese %></dd>
+  <% if @meal.cheese %>
+    <dd>Oui</dd>
+  <% else %>
+    <dd>Non</dd>
+  <% end %>
   
   <dt><strong>Dessert :</strong></dt>
   <dd><%= @meal.dessert %></dd>
