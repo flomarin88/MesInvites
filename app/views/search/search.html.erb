@@ -1,0 +1,38 @@
+<div class="page-header">
+	<h1>Les repas avec "<%= params['query'] %>"</h1>
+	<h3><%= @meals.count %> résultats de recherche</h3>
+</div>
+<table class="table table-striped table-hover" id="meals_table">
+	<thead>
+	    <tr>
+	    	<th>Date</th>
+	      	<th>Invités</th>
+	      	<th>Apéritif</th>
+	      	<th>Entrée</th>
+	      	<th>Plat</th>
+	      	<th>Autre</th>
+	      	<th>Dessert</th>
+	    </tr>
+  	</thead>
+  	<tbody>
+    	<% @meals.each do |meal| %>
+	      	<tr>
+	        	<td data-link="<%= meal_path(meal) %>" class="clickable"><%= l(meal.meal_date, :format => "%d/%m/%Y") if meal.meal_date %> 
+	          	<% if meal.diner != nil %>
+	            <% if meal.diner %>
+	              Diner
+	            <% else %>
+	              Déjeuner
+	            <% end %>
+	          	<% end %>
+	        	</td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.guest.name if meal.guest %></td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.aperitif %></td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.starter %></td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.course %></td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= "Fromage" if meal.cheese %><%= " et " if meal.cheese && meal.salad %><%= "Salade" if meal.salad %></td>
+		        <td data-link="<%= meal_path(meal) %>" class="clickable"><%= meal.dessert %></td>
+	      	</tr>
+    	<% end %>
+  	</tbody>	
+</table>

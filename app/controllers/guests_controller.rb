@@ -8,4 +8,4 @@ class GuestsController < ApplicationController
 		end
 	end
 
-end
+end	

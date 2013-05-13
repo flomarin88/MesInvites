@@ -21,12 +21,12 @@
         <div class="container-fluid">
           <a class="brand" href="/">Mes Invités</a>
           
-          <form class="navbar-form form-search pull-right">
+          <%= form_tag({:controller => 'search'}, :method => 'get', :class => 'navbar-form form-search pull-right') do %>
             <div class="input-append">
-              <input type="text" class="span2 search-query" placeholder="Recherche">
+              <%= text_field_tag :query, params[:query], :class => "span2 search-query", :placeholder => "Recherche", :databehaviour => 'invites-autocomplete' %>
               <button type="submit" class="btn"><i class="icon-search"></i></button>
             </div>
-          </form>
+          <% end %>
 
         </div>
       </div>
