@@ -4,6 +4,6 @@ class Meal < ActiveRecord::Base
 	belongs_to :guest
 
 	def self.search(query)
-		Meal.joins(:guest).where('guests.name' => query)
+		Meal.joins(:guest).where('guests.name' => query).order("meal_date DESC")
 	end
 end
